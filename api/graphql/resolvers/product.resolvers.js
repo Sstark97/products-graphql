@@ -46,8 +46,16 @@ const getProducts = () => {
   ];
 };
 
-const addProduct = () => {
+const addProduct = (_, { input }) => {
   // codigo
 };
 
-export { getProduct, getProducts, addProduct };
+const updateProduct = (_, { input, id }) => {
+   // codigo
+};
+
+ const deleteProduct = (_, { id }) => {
+   // codigo
+};
+
+export { getProduct, getProducts, addProduct, updateProduct, deleteProduct};
