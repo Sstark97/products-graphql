@@ -36,8 +36,20 @@ const addProduct = async (_, { input }) => {
   return product
 };
 
-const updateProduct = (_, { input, id }) => {
-   // codigo
+const updateProduct = async (_, { input, id }) => {
+   const product = await prisma.product.update({
+      include: {
+         category: true
+      },
+      where: {
+         id: parseInt(id)
+      },
+      data: {
+         ...input
+      }
+   })
+
+   return product
 };
 
  const deleteProduct = (_, { id }) => {
