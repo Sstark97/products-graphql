@@ -16,6 +16,7 @@ type Query {
 type Mutation {
   addCategory(input: CreateCategoryInput): Category
   updateCategory(id: ID!, input: UpdateCategoryInput): Category
+  deleteCategory(id: ID!): ID
   addProduct(input: CreateProductInput!): Product
   updateProduct(id: ID!, input: UpdateProductInput!): Product
   deleteProduct(id: ID!): ID

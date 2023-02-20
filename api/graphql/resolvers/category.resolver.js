@@ -29,7 +29,7 @@ const addCategory = async (_, { input }) => {
 };
 
 const updateCategory = async (_, { id, input}) => {
-   const category = prisma.category.update({
+   const category = await prisma.category.update({
       where: {
          id: parseInt(id)
       },
@@ -41,8 +41,14 @@ const updateCategory = async (_, { id, input}) => {
    return category
 };
 
- const deleteCategory = (_, { id }) => {
-   // codigo
+ const deleteCategory = async (_, { id }) => {
+   const category = await prisma.category.delete({
+      where: {
+         id: parseInt(id)
+      },
+   })
+
+   return category.id
 };
 
-export { getCategories, getCategory, addCategory, updateCategory};
+export { getCategories, getCategory, addCategory, updateCategory, deleteCategory};
