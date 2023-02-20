@@ -8,16 +8,17 @@ type Query {
   getID: ID
   getNumbers(numbers: [Int!]!): [Int]
   category(id: ID!): Category!
+  allCategories: [Category!]!
   product(id: ID!): Product!
   allProducts: [Product!]!
-  allCategories: [Category!]!
 }
 
 type Mutation {
+  addCategory(input: CreateCategoryInput): Category
+  updateCategory(id: ID!, input: UpdateCategoryInput): Category
   addProduct(input: CreateProductInput!): Product
   updateProduct(id: ID!, input: UpdateProductInput!): Product
   deleteProduct(id: ID!): ID
-  addCategory(input: CreateCategoryInput): Category
 }
 
 type Product {
@@ -40,6 +41,11 @@ type Category {
 input CreateCategoryInput {
   name: String!
   image: String!
+}
+
+input UpdateCategoryInput {
+  name: String
+  image: String
 }
 
 input CreateProductInput {
