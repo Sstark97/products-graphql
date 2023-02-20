@@ -4,6 +4,9 @@ const prisma = new PrismaClient()
 
 const getProduct = async (_, { id }) => {
    const product = await prisma.product.findUnique({
+      include: {
+         category: true
+      },
       where: {
          id: parseInt(id)
       }
@@ -19,10 +22,11 @@ const getProducts = async () => {
 };
 
 const addProduct = async (_, { input }) => {
+
   const product = await prisma.product.create({
    data: {
       ...input
-   }
+   },
   })
 
   return product

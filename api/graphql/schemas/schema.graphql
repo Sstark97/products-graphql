@@ -27,7 +27,7 @@ type Product {
   image: String!
   createdAt: String!
   categoryId: ID!
-  category: Category!
+  category: Category
 }
 
 type Category {
