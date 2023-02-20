@@ -15,5 +15,8 @@
     "@graphql-tools/load-files": "^6.6.1",
     "graphql": "^16.6.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "prisma": "^4.10.1"
+  }
 }
