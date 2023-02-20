@@ -1,3 +1,7 @@
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
 const getProduct = (_, { id }) => {
   return {
     id,
@@ -46,8 +50,14 @@ const getProducts = () => {
   ];
 };
 
-const addProduct = (_, { input }) => {
-  // codigo
+const addProduct = async (_, { input }) => {
+  const product = await prisma.product.create({
+   data: {
+      ...input
+   }
+  })
+
+  return product
 };
 
 const updateProduct = (_, { input, id }) => {

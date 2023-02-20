@@ -15,6 +15,7 @@ type Mutation {
   addProduct(input: CreateProductInput!): Product
   updateProduct(id: ID!, input: UpdateProductInput!): Product
   deleteProduct(id: ID!): ID
+  addCategory(input: CreateCategoryInput): Category
 }
 
 type Product {
@@ -30,6 +31,11 @@ type Product {
 
 type Category {
   id: ID!
+  name: String!
+  image: String!
+}
+
+input CreateCategoryInput {
   name: String!
   image: String!
 }

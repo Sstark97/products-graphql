@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prisma:format": "prisma format"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "@apollo/server": "^4.4.0",
     "@apollo/server-plugin-landing-page-graphql-playground": "^4.0.0",
     "@graphql-tools/load-files": "^6.6.1",
+    "@prisma/client": "^4.10.1",
     "graphql": "^16.6.0"
   },
   "type": "module",

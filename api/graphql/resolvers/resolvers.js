@@ -1,4 +1,5 @@
-import { getProduct, getProducts, addProduct, updateProduct, deleteProduct } from "./product.resolvers.js"
+import { getProduct, getProducts, addProduct, updateProduct, deleteProduct } from "./product.resolver.js"
+import { addCategory } from "./category.resolver.js";
 
 const resolvers = {
   Query: {
@@ -17,7 +18,8 @@ const resolvers = {
   Mutation: {
     addProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    addCategory
   }
 };
 
