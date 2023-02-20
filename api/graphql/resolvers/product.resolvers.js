@@ -50,4 +50,4 @@ const addProduct = () => {
   // codigo
 };
 
-export { getProduct, getProducts };
+export { getProduct, getProducts, addProduct };

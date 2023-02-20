@@ -1,4 +1,4 @@
-import { getProduct, getProducts } from "./product.resolvers.js"
+import { getProduct, getProducts, addProduct } from "./product.resolvers.js"
 
 const resolvers = {
   Query: {
@@ -14,6 +14,9 @@ const resolvers = {
     product: getProduct,
     allProducts: getProducts
   },
+  Mutation: {
+    addProduct
+  }
 };
 
 export {
