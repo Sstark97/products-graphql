@@ -1,12 +1,4 @@
 type Query {
-  hello: String!
-  getPerson(name: String, age: Int): String
-  getInt: Int
-  getFloat: Float
-  getString: String
-  getBoolean: Boolean
-  getID: ID
-  getNumbers(numbers: [Int!]!): [Int]
   category(id: ID!): Category!
   allCategories: [Category!]!
   product(id: ID!): Product!
