@@ -1,5 +1,5 @@
 import { getProduct, getProducts, addProduct, updateProduct, deleteProduct } from "./product.resolver.js"
-import { addCategory } from "./category.resolver.js";
+import { addCategory, getCategory } from "./category.resolver.js";
 
 const resolvers = {
   Query: {
@@ -11,6 +11,8 @@ const resolvers = {
     getBoolean: () => true,
     getID: () => "121212",
     getNumbers: (_, args) => args.numbers,
+    // Category
+    category: getCategory,
     // Products
     product: getProduct,
     allProducts: getProducts

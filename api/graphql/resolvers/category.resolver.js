@@ -2,8 +2,14 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-const getCategory = (_, { id }) => {
-
+const getCategory = async (_, { id }) => {
+    const category = await prisma.category.findUnique({
+        where: {
+           id: parseInt(id)
+        }
+     })
+  
+     return category
 };
 
 const getCategories = () => {
