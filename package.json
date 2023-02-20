@@ -14,6 +14,7 @@
     "@apollo/server-plugin-landing-page-graphql-playground": "^4.0.0",
     "@graphql-tools/load-files": "^6.6.1",
     "@prisma/client": "^4.10.1",
+    "cors": "^2.8.5",
     "graphql": "^16.6.0"
   },
   "type": "module",
