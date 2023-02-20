@@ -16,7 +16,11 @@ const getProduct = async (_, { id }) => {
 };
 
 const getProducts = async () => {
-   const products = await prisma.product.findMany()
+   const products = await prisma.product.findMany({ 
+      include: {
+         category: true
+      }
+   })
 
    return products
 };

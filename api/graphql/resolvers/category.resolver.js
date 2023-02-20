@@ -12,7 +12,10 @@ const getCategory = async (_, { id }) => {
      return category
 };
 
-const getCategories = () => {
+const getCategories = async () => {
+   const categories = await prisma.category.findMany()
+
+   return categories
 };
 
 const addCategory = async (_, { input }) => {
