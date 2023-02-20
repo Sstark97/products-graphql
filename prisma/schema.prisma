@@ -12,18 +12,18 @@ datasource db {
 
 model Product {
   id          Int      @id @default(autoincrement())
-  name        String
+  name        String   @unique
   price       Float
   description String
   image       String
   createdAt   DateTime @default(now())
   categoryId  Int
-  category    Category @relation(fields: [categoryId], references: [id])
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Category {
   id      Int       @id @default(autoincrement())
-  name    String
+  name    String    @unique
   image   String
   Product Product[]
 }

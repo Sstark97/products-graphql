@@ -52,8 +52,14 @@ const updateProduct = async (_, { input, id }) => {
    return product
 };
 
- const deleteProduct = (_, { id }) => {
-   // codigo
+ const deleteProduct = async (_, { id }) => {
+   const product = await prisma.product.delete({
+      where: {
+         id: parseInt(id)
+      },
+   })
+
+   return product.id
 };
 
 export { getProduct, getProducts, addProduct, updateProduct, deleteProduct};
