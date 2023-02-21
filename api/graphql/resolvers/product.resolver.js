@@ -31,7 +31,7 @@ const getProductsByCategory = async (_, { categoryId }) => {
          category: true
       },
       where: {
-         categoryId: parseInt(categoryId)
+         categoryId: categoryId ? parseInt(categoryId) : undefined
       }
    })
 
