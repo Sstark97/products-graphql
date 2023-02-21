@@ -25,6 +25,19 @@ const getProducts = async () => {
    return products
 };
 
+const getProductsByCategory = async (_, { categoryId }) => {
+   const products = await prisma.product.findMany({ 
+      include: {
+         category: true
+      },
+      where: {
+         categoryId: parseInt(categoryId)
+      }
+   })
+
+   return products
+}
+
 const addProduct = async (_, { input }) => {
 
   const product = await prisma.product.create({
@@ -62,4 +75,4 @@ const updateProduct = async (_, { input, id }) => {
    return product.id
 };
 
-export { getProduct, getProducts, addProduct, updateProduct, deleteProduct};
+export { getProduct, getProducts, getProductsByCategory, addProduct, updateProduct, deleteProduct};

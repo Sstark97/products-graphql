@@ -3,6 +3,7 @@ type Query {
   allCategories: [Category!]!
   product(id: ID!): Product!
   allProducts: [Product!]!
+  productsByCategory(categoryId: ID!): [Product!]!
 }
 
 type Mutation {

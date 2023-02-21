@@ -1,6 +1,7 @@
 import {
   getProduct,
   getProducts,
+  getProductsByCategory,
   addProduct,
   updateProduct,
   deleteProduct,
@@ -21,7 +22,8 @@ const resolvers = {
     allCategories: getCategories,
     // Products
     product: getProduct,
-    allProducts: getProducts
+    allProducts: getProducts,
+    productsByCategory: getProductsByCategory
   },
   Mutation: {
     // Product
