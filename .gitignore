@@ -5,6 +5,3 @@ node_modules
 
 # Enviroments
 .env
-
-# DataBase
-*.db
