@@ -8,7 +8,7 @@ const createApp = async () => {
   app.use(express.json());
   app.use(
     cors({
-      origin: "https://products-graphql.netlify.app",
+      origin: "*",
     })
   );
 
