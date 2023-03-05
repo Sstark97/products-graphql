@@ -4,9 +4,6 @@ const prisma = new PrismaClient()
 
 const getProduct = async (_, { id }) => {
    const product = await prisma.product.findUnique({
-      include: {
-         category: true
-      },
       where: {
          id: parseInt(id)
       }
@@ -16,20 +13,13 @@ const getProduct = async (_, { id }) => {
 };
 
 const getProducts = async () => {
-   const products = await prisma.product.findMany({ 
-      include: {
-         category: true
-      }
-   })
+   const products = await prisma.product.findMany()
 
    return products
 };
 
 const getProductsByCategory = async (_, { categoryId }) => {
    const products = await prisma.product.findMany({ 
-      include: {
-         category: true
-      },
       where: {
          categoryId: categoryId ? parseInt(categoryId) : undefined
       }
@@ -51,9 +41,6 @@ const addProduct = async (_, { input }) => {
 
 const updateProduct = async (_, { input, id }) => {
    const product = await prisma.product.update({
-      include: {
-         category: true
-      },
       where: {
          id: parseInt(id)
       },

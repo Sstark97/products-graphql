@@ -11,6 +11,7 @@ import {
   addCategory,
   getCategories,
   getCategory,
+  getCategoryInProduct,
   updateCategory,
   deleteCategory,
 } from "./category.resolver.js";
@@ -36,6 +37,9 @@ const resolvers = {
     updateCategory,
     deleteCategory,
   },
+  Product: {
+    category: getCategoryInProduct
+  }
 };
 
 export { resolvers };

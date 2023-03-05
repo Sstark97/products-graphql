@@ -12,6 +12,16 @@ const getCategory = async (_, { id }) => {
      return category
 };
 
+const getCategoryInProduct = async ({ categoryId: id }) => {
+   const category = await prisma.category.findUnique({
+      where: {
+         id: parseInt(id)
+      }
+   })
+
+   return category
+};
+
 const getCategories = async () => {
    const categories = await prisma.category.findMany()
 
@@ -51,4 +61,4 @@ const updateCategory = async (_, { id, input}) => {
    return category.id
 };
 
-export { getCategories, getCategory, addCategory, updateCategory, deleteCategory};
+export { getCategories, getCategory, getCategoryInProduct, addCategory, updateCategory, deleteCategory};
